@@ -13,7 +13,7 @@ Excelは，さまざまなファイルタイプをサポートしています。
 
 ```PROCESS HTML TAGS```でXMLスプレッドシートを作成する場合，スプレッドシートに「差し込み」されるデータには，ピクチャ，BLOBタイプを除くタイプのフィールドあるいは配列を使用することができます。ここでは，簡単なテーブルをExcelに書き出したいと思います。
 
-![](table.png)
+![](https://github.com/4D-JP/export-xml-for-excel/blob/master/images/table.png)
 
 ----
 
@@ -21,16 +21,16 @@ Excelは，さまざまなファイルタイプをサポートしています。
 
 はじめに，書き出しファイルのイメージとなるスプレッドシートをMicrosoft Excelで作成します。前述したように，グラフや画像などを挿入することはできませんが，セルのフォントやフォーマットは自由に設定することができます。固定値のテキストは，直接，セルのデータに入力してください。変数（配列）やフィールド，4D言語のフォーミュラ式を挿入したいセルには，自分でそれと判別できるプレースホルダーを記入しておきます。（この例では```[Table_1]Field_1```というマークアップを使用しました。）繰り返されるデータ以外にも，リストの上下などにプレースホルダーを作成しても構いません。
 
-![](template.png)
+![](https://github.com/4D-JP/export-xml-for-excel/blob/master/images/template.png)
 
 
 最後に，このスプレッドシートをExcel 2004 XML スプレッドシート (.xml)」形式で保存します。
 
-![](saveas.png)
+![](https://github.com/4D-JP/export-xml-for-excel/blob/master/images/saveas.png)
 
 一部の機能性が失われるというアラートが表示されるかもしれませんが，ともかく保存してください。
 
-![](alert.png)
+![](https://github.com/4D-JP/export-xml-for-excel/blob/master/images/alert.png)
 
 ----
 
@@ -421,7 +421,7 @@ $filePath:=System folder(Desktop)+"result.xml"
 BLOB TO DOCUMENT($filePath;$fileData)
 ```
 
-![](win.png)
+![](https://github.com/4D-JP/export-xml-for-excel/blob/master/images/win.png)
 
 Mac OSの場合，ファイルタイプやファイルクリエーターを設定しても良いでしょう。
 
