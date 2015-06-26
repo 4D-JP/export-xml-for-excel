@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>miyako keisuke</Author>
+  <LastAuthor>miyako keisuke</LastAuthor>
+  <Created>2012-06-11T02:02:53Z</Created>
+  <LastSaved>2012-06-11T04:27:55Z</LastSaved>
+  <Company>4D</Company>
+  <Version>14.0</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>4460</WindowHeight>
+  <WindowWidth>18860</WindowWidth>
+  <WindowTopX>1580</WindowTopX>
+  <WindowTopY>0</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="ＭＳ Ｐゴシック" x:CharSet="128" x:Family="Swiss" ss:Size="12"
+    ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s62">
+   <Font ss:FontName="ＭＳ Ｐゴシック" x:CharSet="128" ss:Size="12" ss:Color="#CCFFCC"/>
+   <Interior ss:Color="#006411" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s63">
+   <Alignment ss:Vertical="Center"/>
+   <Font ss:FontName="ＭＳ Ｐゴシック" x:CharSet="128" ss:Size="18" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s64">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+   <Font ss:FontName="ＭＳ Ｐゴシック" x:CharSet="128" x:Family="Swiss" ss:Size="12"
+    ss:Color="#FFFFFF" ss:Bold="1"/>
+   <Interior ss:Color="#000090" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s65">
+   <Font ss:FontName="ＭＳ Ｐゴシック" x:CharSet="128" x:Family="Swiss" ss:Size="12"
+    ss:Color="#000000"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s66">
+   <Font ss:FontName="ＭＳ Ｐゴシック" x:CharSet="128" x:Family="Swiss" ss:Size="12"
+    ss:Color="#000000"/>
+   <Interior ss:Color="#CCFFCC" ss:Pattern="Solid"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="9" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="77" ss:DefaultRowHeight="18">
+   <Column ss:AutoFitWidth="0" ss:Width="163"/>
+   <Column ss:AutoFitWidth="0" ss:Width="136"/>
+   <Column ss:Index="8" ss:AutoFitWidth="0" ss:Width="155"/>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s62"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">シュツリョクビ</PhoneticText><Data
+      ss:Type="String">出力日:</Data></Cell>
+    <Cell ss:StyleID="s62"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ヒヅケ</PhoneticText><Data
+      ss:Type="String">^^^日付$$$</Data></Cell>
+   </Row>
+   <Row ss:Index="4" ss:AutoFitHeight="0" ss:StyleID="s63">
+    <Cell ss:StyleID="s64"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">モジレツ</PhoneticText><Data
+      ss:Type="String">文字列</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">テキスト</Data></Cell>
+    <Cell ss:StyleID="s64"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ヒヅケ</PhoneticText><Data
+      ss:Type="String">日付</Data></Cell>
+    <Cell ss:StyleID="s64"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ジカン</PhoneticText><Data
+      ss:Type="String">時間</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">ブール</Data></Cell>
+    <Cell ss:StyleID="s64"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">セイスウ</PhoneticText><Data
+      ss:Type="String">整数</Data></Cell>
+    <Cell ss:StyleID="s64"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">バイチョウセイスウ</PhoneticText><Data
+      ss:Type="String">倍長整数</Data></Cell>
+    <Cell ss:StyleID="s64"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ジッスウ</PhoneticText><Data
+      ss:Type="String">実数</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String">^^^[Table_1]Field_1$$$</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">^^^[Table_1]Field_2$$$</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">^^^[Table_1]Field_3$$$</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">^^^[Table_1]Field_4$$$</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">^^^[Table_1]Field_5$$$</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">^^^[Table_1]Field_6$$$</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">^^^[Table_1]Field_7$$$</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">^^^[Table_1]Field_8$$$</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String">^^^[Table_1]Field_1$$$</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">^^^[Table_1]Field_2$$$</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">^^^[Table_1]Field_3$$$</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">^^^[Table_1]Field_4$$$</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">^^^[Table_1]Field_5$$$</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">^^^[Table_1]Field_6$$$</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">^^^[Table_1]Field_7$$$</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">^^^[Table_1]Field_8$$$</Data></Cell>
+   </Row>
+   <Row ss:Index="9" ss:AutoFitHeight="0">
+    <Cell ss:Index="7" ss:StyleID="s62"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ケンスウ</PhoneticText><Data
+      ss:Type="String">件数:</Data></Cell>
+    <Cell ss:StyleID="s62"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ケンスウ</PhoneticText><Data
+      ss:Type="String">^^^件数$$$</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Unsynced/>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>-4</HorizontalResolution>
+    <VerticalResolution>-4</VerticalResolution>
+   </Print>
+   <PageLayoutZoom>0</PageLayoutZoom>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>14</ActiveRow>
+     <ActiveCol>7</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>
