@@ -1,6 +1,6 @@
 # export-xml-for-excel
 
-Microsoft® Excel®ファイルを書き出す簡単な方法はないのでしょうか?
+Excelファイルを書き出す簡単な方法はないのでしょうか?
 ----
 
 PROCESS HTML TAGSでXMLスプレッドシートを作成することができます。
