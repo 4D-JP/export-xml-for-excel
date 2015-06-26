@@ -1,4 +1,5 @@
 # export-xml-for-excel
+
 Microsoft® Excel®ファイルを書き出す簡単な方法はないのでしょうか?
 ----
 
@@ -10,15 +11,15 @@ Excelは，さまざまなファイルタイプをサポートしています。
 
 ----
 
-PROCESS HTML TAGSでXMLスプレッドシートを作成する場合，スプレッドシートに「差し込み」されるデータには，ピクチャ，BLOBタイプを除くタイプのフィールドあるいは配列を使用することができます。ここでは，簡単なテーブルをExcelに書き出したいと思います。
+```PROCESS HTML TAGS```でXMLスプレッドシートを作成する場合，スプレッドシートに「差し込み」されるデータには，ピクチャ，BLOBタイプを除くタイプのフィールドあるいは配列を使用することができます。ここでは，簡単なテーブルをExcelに書き出したいと思います。
 
 ![](table.png)
 
 ----
 
-PROCESS HTML TAGSでXMLスプレッドシートを作成する場合，スプレッドシートに「差し込み」されるデータには，ピクチャ，BLOBタイプを除くタイプのフィールドあるいは配列を使用することができます。ここでは，簡単なテーブルをExcelに書き出したいと思います。
+```PROCESS HTML TAGS```でXMLスプレッドシートを作成する場合，スプレッドシートに「差し込み」されるデータには，ピクチャ，BLOBタイプを除くタイプのフィールドあるいは配列を使用することができます。ここでは，簡単なテーブルをExcelに書き出したいと思います。
 
-はじめに，書き出しファイルのイメージとなるスプレッドシートをMicrosoft Excelで作成します。前述したように，グラフや画像などを挿入することはできませんが，セルのフォントやフォーマットは自由に設定することができます。固定値のテキストは，直接，セルのデータに入力してください。変数（配列）やフィールド，4D言語のフォーミュラ式を挿入したいセルには，自分でそれと判別できるプレースホルダーを記入しておきます。（この例では「!^!^!^[Table_1]Field_1$$$」というマークアップを使用しました。）繰り返されるデータ以外にも，リストの上下などにプレースホルダーを作成しても構いません。
+はじめに，書き出しファイルのイメージとなるスプレッドシートをMicrosoft Excelで作成します。前述したように，グラフや画像などを挿入することはできませんが，セルのフォントやフォーマットは自由に設定することができます。固定値のテキストは，直接，セルのデータに入力してください。変数（配列）やフィールド，4D言語のフォーミュラ式を挿入したいセルには，自分でそれと判別できるプレースホルダーを記入しておきます。（この例では```[Table_1]Field_1```というマークアップを使用しました。）繰り返されるデータ以外にも，リストの上下などにプレースホルダーを作成しても構いません。
 
 ![](template.png)
 
@@ -195,35 +196,35 @@ XMLスプレッドシートファイルをテキストエディターで開い�
 </Workbook> 
 ```
 
-はじめに，「差し込み」データのプレースホルダーの文字列を検索して<!--!#4DTEXT-->タグで置き換えましょう。4DTEXTは，4DVARに代わり，v12.2で導入された新しい4Dタグです。v12では，どちらのタグも使用できますが，よりセキュリティの強化された4DTEXTが推奨されています。v13であれば，4DTEXTを使用してください。
+はじめに，「差し込み」データのプレースホルダーの文字列を検索して```<!--!#4DTEXT-->```タグで置き換えましょう。4DTEXTは，4DVARに代わり，v12.2で導入された新しい4Dタグです。v12では，どちらのタグも使用できますが，よりセキュリティの強化された4DTEXTが推奨されています。v13であれば，4DTEXTを使用してください。
 
 [http://doc.4d.com/4D-12.4/Web/4D-HTML.300-977162.ja.html](http://doc.4d.com/4D-12.4/Web/4D-HTML.300-977162.ja.html)
 
-今回の例では「!^!^!^[Table_1]Field_1$$$」というマークアップを使用したので，「!^!^!^」を「<!--!#4DTEXT 」で置換し，「$$$」を「-->」で置換すれば良い，ということになります。
+今回の例では```^^^[Table_1]Field_1$$$```というマークアップを使用したので，```^^^```を```<!--!#4DTEXT ```で置換し，```$$$```を```-->```で置換すれば良い，ということになります。
 
-4Dタグは，フィールド，変数，配列だけでなく，フォーミュラーも参照することができます。たとえば，「出力日:」の右隣に作成した「!^!^!^日付$$$」というプレースホルダーは「<!--!#4DTEXT 日付-->」というタグに置換し，「日付」というプロセス変数を代入させることもできますが，「<!--!#4DTEXT String(Current date;ISO Date GMT)-->」というフォーミュラーにすれば，よりダイナミックなテンプレートに仕立てることができます。「!^!^!^件数$$$」も同様で，「<!--!#4DTEXT Records in selection([テーブル名])-->」のようなフォーミュラーがそのまま使用できます。
+4Dタグは，フィールド，変数，配列だけでなく，フォーミュラーも参照することができます。たとえば，「出力日:」の右隣に作成した```^^^```日付```$$$```」というプレースホルダーは```<!--!#4DTEXT 日付-->```というタグに置換し，「日付」というプロセス変数を代入させることもできますが，```<!--!#4DTEXT String(Current date;ISO Date GMT)-->```というフォーミュラーにすれば，よりダイナミックなテンプレートに仕立てることができます。```^^^```件数```$$$```」も同様で，```<!--!#4DTEXT Records in selection([テーブル名])-->```のようなフォーミュラーがそのまま使用できます。
 
-セレクションのレコードが繰り返されるべき部分は，最初と最後にそれぞれ<!--!#4DLOOP [テーブル名]または配列名-->および<!--!#4DENDLOOP-->を挿入します。さらに，偶数行と奇数行でスタイルを切り替えたいので，<!--!#4DIF (Selected record number([テーブル名])%2=1)-->，<!--!#4DELSE-->，<!--!#4DENDIF-->でその分岐条件を記述します。
+セレクションのレコードが繰り返されるべき部分は，最初と最後にそれぞれ```<!--!#4DLOOP [テーブル名]または配列名-->```および```<!--!#4DENDLOOP-->```を挿入します。さらに，偶数行と奇数行でスタイルを切り替えたいので，```<!--!#4DIF (Selected record number([テーブル名])%2=1)-->```，```<!--!#4DELSE-->```，```<!--!#4DENDIF-->```でその分岐条件を記述します。
 
-データの「差し込み」に関わる部分は以上ですが，このままでは，PROCESS HTML TAGS で「差し込み」の処理することができません。テーブル構造ななどのドキュメント情報は，Excelで出力したオリジナルの文書が残されているためです。
+データの「差し込み」に関わる部分は以上ですが，このままでは，```PROCESS HTML TAGS``` で「差し込み」の処理することができません。テーブル構造ななどのドキュメント情報は，Excelで出力したオリジナルの文書が残されているためです。
 
 XMLスプレッドシートのWorksheet/Table要素には，ss:ExpandedColumnCount属性およびss:ExpandedRowCount属性があり，それぞれ有効な列数および行数に対応しています。欠落している場合，Excelは自動的にその情報を補うため，手っ取り早いのは，これを削除してしまうことです。
 
-{{{xml
+```xml
  <Worksheet ss:Name="Sheet1">
   <Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="9" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="77" ss:DefaultRowHeight="18">
 ```
 
-もし，これも動的に書き込みのであれば，下記のようにタグを挿入することができます。この場合，PROCESS HTML TAGSは，正常に動作しますが，文書はXMLとしての妥当性を失うことになるので注意してください。（タグの入れ子）
+もし，これも動的に書き込みのであれば，下記のようにタグを挿入することができます。この場合，```PROCESS HTML TAGS```は，正常に動作しますが，文書はXMLとしての妥当性を失うことになるので注意してください。（タグの入れ子）
 
-{{{xml
+```xml
  <Worksheet ss:Name="Sheet1">
   <Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="<!--#4DTEXT (Records in selection([Table_1])+9)-->" 
 x:FullColumns="1"  x:FullRows="1" ss:DefaultColumnWidth="77" ss:DefaultRowHeight="18">
 ```
 
-{{{xml
+```xml
  <Worksheet ss:Name="Sheet1">
   <Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="<!--#4DTEXT (Records in selection([Table_1])+9)-->" 
 x:FullColumns="1"  x:FullRows="1" ss:DefaultColumnWidth="77" ss:DefaultRowHeight="18">
@@ -231,7 +232,7 @@ x:FullColumns="1"  x:FullRows="1" ss:DefaultColumnWidth="77" ss:DefaultRowHeight
 
 XMLスプレッドシートには，データのない行列を省略し，データが再開する行列がインデックスで指定されるようになっています。つまり，1-5行目にはデータが存在し，6，7行は空白，8行目にはデータが存在するような場合，1-5行目はそれぞれ<row>要素，6，7行目は省略，8行目は<row ss:Index="8">という要素になり，その位置情報が属性で与えられます。Excelで作成したテンプレートの場合，レコードが繰り返されるセクションより上位のインデックスは問題ありませんが，データが繰り返されるセクションの下位のインデックスは，レコード数だけインクリメントされなければならない，ということです。ここでもやはり，省略するか（その場合，空白の行が発生しないようにデザインする必要があります），タグの入れ子で属性値を制御してください。
 
-{{{xml
+```xml
    <!--#4DENDIF-->  
    <!--#4DENDLOOP-->  
    <Row ss:Index="<!--#4DTEXT (Records in selection([Table_1])+9)-->" ss:AutoFitHeight="0">
@@ -239,7 +240,7 @@ XMLスプレッドシートには，データのない行列を省略し，デ�
 
 最終的には，下記のようなファイルが出来上がります。
 
-{{{xml
+```xml
 <?xml version="1.0"?>
 <Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
  xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -405,97 +406,74 @@ XMLスプレッドシートには，データのない行列を省略し，デ�
 
 テンプレートさえ出来れてしまえば，あとはTEXT変数に読み込んでPROCESS HTML TAGSを実行するだけでデータの挿入されたXMLスプレッドシートを出力することができます。
 
-```html
-<!-- Generator: GNU source-highlight 3.1.6
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><b><font color="#009900">ALL RECORDS</font></b><font color="#000000">(</font><font color="#9A1900">[Table_1]</font><font color="#000000">)</font>
-<b><font color="#009900">REDUCE SELECTION</font></b><font color="#000000">(</font><font color="#9A1900">[Table_1]</font><font color="#000000">;</font><font color="#000000">100</font><font color="#000000">)</font>
+```
+ALL RECORDS([Table_1])
+REDUCE SELECTION([Table_1];100)
 
-<font color="#0000FF">$filePath</font><font color="#000000">:=</font><b><font color="#009900">Get 4D folder</font></b><font color="#000000">(</font><u><font color="#993399">Current Resources folder</font></u><font color="#000000">)+</font><font color="#000000">"template.4dxml"</font>
-<b><font color="#009900">DOCUMENT TO BLOB</font></b><font color="#000000">(</font><font color="#0000FF">$filePath</font><font color="#000000">;</font><font color="#0000FF">$fileData</font><font color="#000000">)</font>
-<font color="#0000FF">$fileText</font><font color="#000000">:=</font><b><font color="#009900">Convert to text</font></b><font color="#000000">(</font><font color="#0000FF">$fileData</font><font color="#000000">;</font><font color="#000000">"utf-8"</font><font color="#000000">)</font>
+$filePath:=Get 4D folder(Current Resources folder)+"template.4dxml"
+DOCUMENT TO BLOB($filePath;$fileData)
+$fileText:=Convert to text($fileData;"utf-8")
 
-<b><font color="#009900">PROCESS HTML TAGS</font></b><font color="#000000">(</font><font color="#0000FF">$fileText</font><font color="#000000">;</font><font color="#0000FF">$fileText</font><font color="#000000">)</font>
+PROCESS HTML TAGS($fileText;$fileText)
 
-<b><font color="#009900">CONVERT FROM TEXT</font></b><font color="#000000">(</font><font color="#0000FF">$fileText</font><font color="#000000">;</font><font color="#000000">"utf-8"</font><font color="#000000">;</font><font color="#0000FF">$fileData</font><font color="#000000">)</font>
-<font color="#0000FF">$filePath</font><font color="#000000">:=</font><b><font color="#009900">System folder</font></b><font color="#000000">(</font><u><font color="#993399">Desktop</font></u><font color="#000000">)+</font><font color="#000000">"result.xml"</font>
-<b><font color="#009900">BLOB TO DOCUMENT</font></b><font color="#000000">(</font><font color="#0000FF">$filePath</font><font color="#000000">;</font><font color="#0000FF">$fileData</font><font color="#000000">)</font></tt></pre>
-
+CONVERT FROM TEXT($fileText;"utf-8";$fileData)
+$filePath:=System folder(Desktop)+"result.xml"
+BLOB TO DOCUMENT($filePath;$fileData)
 ```
 
-[[Image(win.png)]]
+![](win.png)
 
-----
 Mac OSの場合，ファイルタイプやファイルクリエーターを設定しても良いでしょう。
 
-```html
-<!-- Generator: GNU source-highlight 3.1.6
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><b><font color="#009900">C_TEXT</font></b><font color="#000000">(</font><b><i><font color="#000080">$1</font></i></b><font color="#000000">)</font>
+```
+C_TEXT($1)
 
-<b><font color="#009900">PLATFORM PROPERTIES</font></b><font color="#000000">(</font><font color="#0000FF">$platform</font><font color="#000000">)</font>
+PLATFORM PROPERTIES($platform)
 
-<b><font color="#009900">If</font></b> <font color="#000000">(</font><font color="#0000FF">$platform</font><font color="#000000">=</font><u><font color="#993399">Mac OS</font></u><font color="#000000">)</font>
+If ($platform=Mac OS)
 
-<font color="#0000FF">$filePath</font><font color="#000000">:=</font><b><i><font color="#000080">$1</font></i></b>
+$filePath:=$1
 
-<b><font color="#009900">If</font></b> <font color="#000000">(</font><b><font color="#009900">Test path name</font></b><font color="#000000">(</font><font color="#0000FF">$filePath</font><font color="#000000">)=</font><u><font color="#993399">Is a document</font></u><font color="#000000">)</font>
+If (Test path name($filePath)=Is a document)
 
-<b><font color="#009900">SET DOCUMENT CREATOR</font></b><font color="#000000">(</font><font color="#0000FF">$filePath</font><font color="#000000">;</font><font color="#000000">"XCEL"</font><font color="#000000">)</font>
-<b><font color="#009900">SET DOCUMENT TYPE</font></b><font color="#000000">(</font><font color="#0000FF">$filePath</font><font color="#000000">;</font><font color="#000000">"XMLS"</font><font color="#000000">)</font>
+SET DOCUMENT CREATOR($filePath;"XCEL")
+SET DOCUMENT TYPE($filePath;"XMLS")
 
-<b><font color="#009900">End if</font></b> 
+End if 
 
-<b><font color="#009900">End if</font></b> </tt></pre>
+End if
 ```
 
+***応用編***
 
-[[Image(result.png)]]
-
-----
-
-** 応用編
-
-----
-
-サンプルコードには，LAUNCH EXTERNAL PROCESSとスクリプト言語を使用し，XML文書をXLSスプレッドシートに変換したり，Excelを起動してファイルを開くメソッドが収録されています。
-
-```html
-<!-- Generator: GNU source-highlight 3.1.6
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><b><font color="#009900">ALL RECORDS</font></b><font color="#000000">(</font><font color="#9A1900">[Table_1]</font><font color="#000000">)</font>
-<b><font color="#009900">REDUCE SELECTION</font></b><font color="#000000">(</font><font color="#9A1900">[Table_1]</font><font color="#000000">;</font><font color="#000000">100</font><font color="#000000">)</font>
-
-<font color="#0000FF">$filePath</font><font color="#000000">:=</font><b><font color="#009900">Get 4D folder</font></b><font color="#000000">(</font><u><font color="#993399">Current Resources folder</font></u><font color="#000000">)+</font><font color="#000000">"template.4dxml"</font>
-
-<font color="#0000FF">$fileText</font><font color="#000000">:=</font><b><i><font color="#000080">XML_Read_document </font></i></b><font color="#000000">(</font><font color="#0000FF">$filePath</font><font color="#000000">)</font>
-
-<b><font color="#009900">PROCESS HTML TAGS</font></b><font color="#000000">(</font><font color="#0000FF">$fileText</font><font color="#000000">;</font><font color="#0000FF">$fileText</font><font color="#000000">)</font>
-
-<b><font color="#009900">If</font></b> <font color="#000000">(</font><b><font color="#009900">Shift down</font></b><font color="#000000">)</font><i><font color="#808080">`XLS</font></i>
-
-<font color="#0000FF">$filePath</font><font color="#000000">:=</font><b><font color="#009900">Temporary folder</font></b><font color="#000000">+</font><b><font color="#009900">Generate UUID</font></b><font color="#000000">+</font><font color="#000000">".xml"</font>
-<font color="#0000FF">$xlsPath</font><font color="#000000">:=</font><b><font color="#009900">System folder</font></b><font color="#000000">(</font><u><font color="#993399">Desktop</font></u><font color="#000000">)+</font><b><font color="#009900">Generate UUID</font></b><font color="#000000">+</font><font color="#000000">".xls"</font>
-
-<b><i><font color="#000080">XML_WRITE_DOCUMENT </font></i></b><font color="#000000">(</font><font color="#0000FF">$fileText</font><font color="#000000">;</font><font color="#0000FF">$filePath</font><font color="#000000">)</font>
-<b><i><font color="#000080">XML_SAVE_AS_XLS </font></i></b><font color="#000000">(</font><font color="#0000FF">$filePath</font><font color="#000000">;</font><font color="#0000FF">$xlsPath</font><font color="#000000">)</font>
-<b><i><font color="#000080">XML_OPEN_DOCUMENT </font></i></b><font color="#000000">(</font><font color="#0000FF">$xlsPath</font><font color="#000000">)</font>
-
-<b><font color="#009900">Else</font></b> <i><font color="#808080">`XML</font></i>
-
-<font color="#0000FF">$filePath</font><font color="#000000">:=</font><b><font color="#009900">System folder</font></b><font color="#000000">(</font><u><font color="#993399">Desktop</font></u><font color="#000000">)+</font><b><font color="#009900">Generate UUID</font></b><font color="#000000">+</font><font color="#000000">".xml"</font>
-
-<b><i><font color="#000080">XML_WRITE_DOCUMENT </font></i></b><font color="#000000">(</font><font color="#0000FF">$fileText</font><font color="#000000">;</font><font color="#0000FF">$filePath</font><font color="#000000">)</font>
-<b><i><font color="#000080">XML_SET_DOCUMENT_TYPE </font></i></b><font color="#000000">(</font><font color="#0000FF">$filePath</font><font color="#000000">)</font>
-<b><i><font color="#000080">XML_OPEN_DOCUMENT </font></i></b><font color="#000000">(</font><font color="#0000FF">$filePath</font><font color="#000000">)</font>
-
-<b><font color="#009900">End if</font></b> </tt></pre>
+サンプルコードには，```LAUNCH EXTERNAL PROCESS```とスクリプト言語を使用し，XML文書をXLSスプレッドシートに変換したり，Excelを起動してファイルを開くメソッドが収録されています。
 
 ```
+ALL RECORDS([Table_1])
+REDUCE SELECTION([Table_1];100)
 
+$filePath:=Get 4D folder(Current Resources folder)+"template.4dxml"
+
+$fileText:=XML_Read_document ($filePath)
+
+PROCESS HTML TAGS($fileText;$fileText)
+
+If (Shift down)`XLS
+
+$filePath:=Temporary folder+Generate UUID+".xml"
+$xlsPath:=System folder(Desktop)+Generate UUID+".xls"
+
+XML_WRITE_DOCUMENT ($fileText;$filePath)
+XML_SAVE_AS_XLS ($filePath;$xlsPath)
+XML_OPEN_DOCUMENT ($xlsPath)
+
+Else `XML
+
+$filePath:=System folder(Desktop)+Generate UUID+".xml"
+
+XML_WRITE_DOCUMENT ($fileText;$filePath)
+XML_SET_DOCUMENT_TYPE ($filePath)
+XML_OPEN_DOCUMENT ($filePath)
+
+End if 
+```
